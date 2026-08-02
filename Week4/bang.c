@@ -1,0 +1,11 @@
+#include<stdio.h>
+int bang(int x) {
+  return ((~x & ~(~x + 1)) >> 31) & 1;
+}
+int main(int argc, char const *argv[])
+{
+  printf("%d\n", bang(3));   // 0
+  printf("%d\n", bang(0));   // 1
+  printf("%d\n", bang(-5));  // 0
+  return 0;
+}
